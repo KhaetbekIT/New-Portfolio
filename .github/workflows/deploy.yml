@@ -1,7 +1,10 @@
 on: 
   push:
     branches:
-      - main
+      - master
+  pull_request:
+    branches:
+        - master
 name: 🚀 Deploy website on push
 
 jobs:
@@ -23,7 +26,7 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: KhaetbekIT/New-Portfolio
       with:
         server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
