@@ -1,0 +1,11 @@
+@import "./../../styles/var.scss";
+
+.Logo {
+    display: flex;
+    align-items: center;
+    column-gap: CounterPxToRem(8);
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,97 @@
+@import "./var.scss";
+
+a,
+span,
+button,
+label,
+textarea,
+input,
+b,
+i,
+em,
+strong,
+sub,
+sup {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+a,
+button,
+label,
+textarea,
+input {
+    cursor: pointer;
+}
+
+img,
+svg,
+picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.code {
+    color: $color-gray;
+}
+
+.blockquote {
+    padding: CounterPxToRem(25) 0;
+}
+
+.color-block {
+    width: 135px;
+    height: 135px;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-white;
+
+    .code {
+        color: $color-white;
+    }
+}
+
+.secondary {
+    &-gray {
+        background: $background-gray;
+    }
+
+    &-red {
+        background: $background-red;
+    }
+
+    &-green {
+        background: $background-green;
+    }
+
+    &-yellow {
+        background: $background-yellow;
+    }
+
+    &-blue {
+        background: $background-blue;
+    }
+
+    &-pink {
+        background: $background-pink;
+    }
+
+    &-aqua {
+        background: $background-aqua;
+    }
+
+    &-light-gray {
+        background: $background-light-gray;
+    }
+}
+
+.primary {
+    &-pink {
+        color: $background-pink;
+    }
+}

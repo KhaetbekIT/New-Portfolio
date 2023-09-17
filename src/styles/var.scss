@@ -1,0 +1,83 @@
+// container
+$conatiner-padding: 15;
+$conatiner-desktop: 1024;
+$conatiner-sm: 600;
+$conatiner-md: 900;
+$conatiner-lg: 1200;
+$conatiner-xl: 1536;
+
+
+// colors
+$color-white: #fff;
+$color-gray: #ABB2BF;
+$color-black: #000;
+
+$background-gray: #282C33;
+$background-red: #E06B74;
+$background-green: #98C379;
+$background-yellow: #E5C07A;
+$background-blue: #62AEEF;
+$background-pink: #C778DD;
+$background-aqua: #55B6C2;
+$background-light-gray: $color-gray;
+
+// functions
+@function CounterPxToRem($px: 0) {
+    @return (($px * 0.063)+rem);
+}
+
+// extands
+%linearblock {
+    border: CounterPxToRem(1) solid $background-light-gray;
+    position: absolute;
+    content: "";
+    display: none;
+
+    @media(min-width: 1366px) {
+        display: block;
+    }
+}
+
+%dots {
+    content: "";
+    position: absolute;
+    background-image: url("./../images/dots/small-dots.svg");
+    background-size: cover;
+    display: none;
+
+    @media(min-width: 1366px) {
+        display: block;
+    }
+}
+
+// breakpoints
+$breakpoint-xl: CounterPxToRem($conatiner-xl - 10);
+$breakpoint-lg: CounterPxToRem($conatiner-lg - 10);
+$breakpoint-md: CounterPxToRem($conatiner-md - 10);
+$breakpoint-sm: CounterPxToRem($conatiner-sm - 10);
+
+@mixin Breakpoint($breakpoint) {
+    @if ($breakpoint =="xl") {
+        @media (min-width: $breakpoint-xl) {
+            @content;
+        }
+    }
+
+    @else if ($breakpoint =="lg") {
+        @media (min-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if ($breakpoint =="md") {
+        @media (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if ($breakpoint =="sm") {
+        @media (min-width: $breakpoint-sm) {
+            @content;
+        }
+    }
+}

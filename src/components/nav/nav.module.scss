@@ -1,0 +1,141 @@
+@import "./../../styles/var.scss";
+
+.Nav {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: $background-gray;
+
+    @include Breakpoint("sm") {
+        position: relative;
+        background: transparent;
+    }
+
+    &__row {
+        padding-top: CounterPxToRem(30);
+        padding-bottom: CounterPxToRem(8);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        &>* {
+            flex-shrink: 0;
+        }
+    }
+
+    &__socials {
+        position: absolute;
+        top: 0;
+        left: CounterPxToRem(-122);
+        display: none;
+
+        &>*+* {
+            margin-top: CounterPxToRem(8);
+        }
+
+        @media(min-width: (1247px)) {
+            display: block;
+        }
+    }
+
+    &__vertical_line {
+        height: CounterPxToRem(191);
+        width: CounterPxToRem(1);
+        border: CounterPxToRem(1) solid $color-gray;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        &_text {
+            color: $color-white;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            color: $color-white;
+        }
+
+        span {
+            color: $background-pink;
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        @include Breakpoint("sm") {
+            display: block;
+        }
+
+        &>*+* {
+            margin-left: CounterPxToRem(32);
+        }
+
+        &>a[class~="active"] {
+            color: $color-white;
+            font-weight: 500;
+        }
+    }
+
+    &__mobile {
+        @include Breakpoint("sm") {
+            display: none;
+        }
+
+        &_wrap {
+            padding-top: CounterPxToRem(42);
+            position: fixed;
+            top: -100vh;
+            left: 0;
+            right: 0;
+            background: $background-gray;
+            z-index: 1;
+            transition: all .5s linear;
+
+            &_active {
+                top: CounterPxToRem(70);
+                bottom: 0;
+                min-height: 100vh;
+                transition: all .5s linear;
+            }
+        }
+
+        &_link {
+            font-size: CounterPxToRem(32);
+        }
+
+        &_socials {
+            display: flex;
+            justify-content: center;
+            padding-top: CounterPxToRem(107);
+            column-gap: CounterPxToRem(8);
+        }
+    }
+
+    &__burger {
+        width: CounterPxToRem(24);
+        height: CounterPxToRem(24);
+        padding-top: CounterPxToRem(4);
+        background: transparent;
+        border: none;
+    }
+
+    &__list {
+        list-style-type: none;
+
+        &>*+* {
+            margin-top: CounterPxToRem(32);
+        }
+
+        li>a[class~="active"] {
+            color: $color-white;
+            font-weight: 500;
+        }
+    }
+}

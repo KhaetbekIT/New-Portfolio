@@ -1,0 +1,16 @@
+@import "./../../styles/var.scss";
+
+.Hr {
+    border: CounterPxToRem(1) solid $background-pink;
+    max-width: CounterPxToRem(270);
+    width: 100%;
+    display: none;
+
+    @include Breakpoint("sm") {
+        display: inline-block;
+    }
+
+    @include Breakpoint("lg") {
+        max-width: CounterPxToRem(511);
+    }
+}

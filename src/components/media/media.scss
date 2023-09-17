@@ -1,0 +1,53 @@
+@import "./../../styles/var.scss";
+
+.Media {
+    &__stroke {
+        stroke: $color-gray;
+    }
+
+    &__path {
+        fill: $background-light-gray;
+        transition: all .3s linear;
+
+        &-facebook {
+            fill: $background-gray;
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        column-gap: CounterPxToRem(5);
+
+        &-text {
+            line-height: normal;
+            transition: all .3s linear;
+        }
+
+        &:hover {
+            .Media__path {
+                fill: $color-white;
+
+                &-facebook {
+                    fill: $background-gray;
+                }
+            }
+
+            .Media__item-text {
+                color: $color-white;
+            }
+
+            .Media__stroke {
+                stroke: $color-white;
+            }
+        }
+
+        span {
+            width: CounterPxToRem(64);
+
+            @include Breakpoint("sm") {
+                width: auto;
+            }
+        }
+    }
+}

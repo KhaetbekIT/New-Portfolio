@@ -1,0 +1,27 @@
+@import "./../../styles/var.scss";
+
+.Button {
+    outline: none;
+    background: transparent;
+    padding: CounterPxToRem(8) CounterPxToRem(18);
+    gap: CounterPxToRem(10);
+    border: CounterPxToRem(1) solid $background-light-gray;
+
+    color: $color-gray;
+    font-size: CounterPxToRem(16);
+    font-weight: 500;
+    line-height: normal;
+
+    &:hover {
+        background: rgba(171, 178, 191, 0.20);
+    }
+
+    &--primary {
+        border: CounterPxToRem(1) solid $background-pink;
+        color: $color-white;
+
+        &:hover {
+            background: rgba(199, 120, 221, 0.20);
+        }
+    }
+}

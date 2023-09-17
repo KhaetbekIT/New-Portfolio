@@ -1,0 +1,50 @@
+@import "./../../styles/var.scss";
+
+.Label {
+    position: relative;
+    width: 100%;
+
+    &__text {
+        color: $color-gray;
+        font-size: CounterPxToRem(16);
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    span.Label__text {
+        left: CounterPxToRem(8);
+        top: CounterPxToRem(8);
+        position: absolute;
+        transition: all .3s linear;
+    }
+
+    .Input {
+        width: 100%;
+        border: CounterPxToRem(1) solid $color-gray;
+        outline: none;
+        padding: CounterPxToRem(8);
+        background: transparent;
+        @extend .Label__text;
+        transition: all .3s linear;
+
+        &:active,
+        &:focus {
+            border: CounterPxToRem(1) solid $color-white;
+        }
+    }
+
+    .Input:active+span.Label__text,
+    .Input:focus+span.Label__text {
+        top: 0;
+        transform: translateY(-50%);
+        background: $background-gray;
+        padding: 0 CounterPxToRem(4);
+        color: $color-white;
+        transition: .3s linear;
+    }
+
+    .Textarea {
+        height: 119px;
+        resize: vertical;
+    }
+}

@@ -1,0 +1,109 @@
+@import "./../../styles/var.scss";
+
+.complete {
+    padding-top: CounterPxToRem(68);
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &__row {
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 1fr;
+        gap: CounterPxToRem(16);
+        padding-top: CounterPxToRem(48);
+        position: relative;
+
+        &>* {
+            margin: 0 auto;
+
+            @include Breakpoint("md") {
+                margin: 0;
+            }
+        }
+
+        @include Breakpoint("sm") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include Breakpoint("md") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &::before {
+            @extend %dots;
+            width: CounterPxToRem(109);
+            top: CounterPxToRem(100);
+            left: CounterPxToRem(-(93 + 109));
+            height: CounterPxToRem(57);
+        }
+
+        &::after {
+            @extend %linearblock;
+            width: CounterPxToRem(155);
+            top: CounterPxToRem(0);
+            right: CounterPxToRem(-(103 + 155));
+            height: CounterPxToRem(155);
+        }
+    }
+
+    &__button {
+
+        width: 100%;
+
+        @media (min-width: 800px) {
+            width: 50%;
+        }
+
+        &s {
+            padding-top: CounterPxToRem(16);
+            text-align: center;
+
+            @media (min-width: 800px) {
+                padding-top: CounterPxToRem(25);
+            }
+        }
+    }
+}
+
+.small {
+    &_projects {
+        padding: CounterPxToRem(81) 0 CounterPxToRem(187);
+        position: relative;
+
+        @media(min-width: 1366px) {
+            overflow: hidden;
+        }
+
+        &::before {
+            @extend %linearblock;
+            left: CounterPxToRem(93);
+            width: CounterPxToRem(155);
+            top: CounterPxToRem(43);
+            height: CounterPxToRem(155);
+        }
+
+        &__row {
+            @extend .complete__row;
+
+            &::before {
+                @extend %dots;
+                width: CounterPxToRem(84);
+                top: auto;
+                bottom: CounterPxToRem(163);
+                left: CounterPxToRem(-(118 + 109));
+                height: CounterPxToRem(84);
+            }
+
+            &::after {
+                border: none;
+                @extend %dots;
+                width: CounterPxToRem(103);
+                top: CounterPxToRem(42);
+                right: CounterPxToRem(-(90 + 103));
+                height: CounterPxToRem(103);
+            }
+        }
+    }
+}

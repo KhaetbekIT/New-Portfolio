@@ -1,0 +1,22 @@
+@import "./../styles/var.scss";
+
+.section {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: CounterPxToRem(16);
+
+        &>* {
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        column-gap: CounterPxToRem(16);
+        flex-grow: 1;
+    }
+}

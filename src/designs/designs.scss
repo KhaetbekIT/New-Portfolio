@@ -1,0 +1,12 @@
+@import "./../styles/var.scss";
+
+.Design {
+    padding: CounterPxToRem(40) 0;
+    background: $background-gray;
+
+    &--container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: CounterPxToRem(30);
+    }
+}

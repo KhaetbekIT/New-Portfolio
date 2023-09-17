@@ -1,0 +1,143 @@
+@import "./../../styles/var.scss";
+
+
+.about {
+
+    &__content {
+        max-width: CounterPxToRem(515);
+        padding-top: CounterPxToRem(50);
+        text-align: justify;
+
+        @include Breakpoint("md") {
+            padding-top: CounterPxToRem(112 - 8);
+        }
+
+        @include Breakpoint("lg") {
+            text-align: left;
+        }
+
+        &>*+* {
+            margin-top: CounterPxToRem(36);
+        }
+    }
+}
+
+.skills {
+    padding-top: CounterPxToRem(113);
+    position: relative;
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &::after {
+        @extend %dots;
+        top: CounterPxToRem(60);
+        right: CounterPxToRem(118);
+        width: CounterPxToRem(103);
+        height: CounterPxToRem(103);
+    }
+
+    &__lists {
+        max-width: 100%;
+        width: auto;
+        flex-wrap: wrap;
+        padding-top: CounterPxToRem(48);
+        align-items: center;
+
+        @include Breakpoint("md") {
+            align-items: flex-start;
+        }
+
+    }
+}
+
+.facts {
+    padding-top: CounterPxToRem(83);
+    padding-bottom: CounterPxToRem(162);
+    position: relative;
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &::after {
+        @extend %dots;
+        right: CounterPxToRem(93 + 103);
+        bottom: CounterPxToRem(76);
+        width: CounterPxToRem(103);
+        height: CounterPxToRem(103);
+        z-index: 1;
+    }
+
+    &__row {
+        display: flex;
+        padding-top: CounterPxToRem(26);
+        justify-content: space-between;
+        position: relative;
+
+        &>* {
+            flex-shrink: 0;
+        }
+
+        &::before {
+            @extend %linearblock;
+            left: CounterPxToRem(-(93 + 155));
+            top: CounterPxToRem(26);
+            width: CounterPxToRem(155);
+            height: CounterPxToRem(155);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: CounterPxToRem(16);
+        max-width: 100%;
+
+        @include Breakpoint("lg") {
+            max-width: CounterPxToRem(676);
+        }
+
+        &>* {
+            display: inline-block;
+            border: 1px solid $color-gray;
+            padding: CounterPxToRem(8);
+
+            @include Breakpoint("sm") {
+                flex-shrink: 0;
+            }
+        }
+
+        b {
+            font-weight: 400;
+            color: $color-white;
+        }
+    }
+
+    &__iconholder {
+        max-width: CounterPxToRem(329);
+        width: 100%;
+        position: relative;
+        display: none;
+
+        @include Breakpoint("lg") {
+            display: block;
+        }
+    }
+
+    &__icon {
+        width: CounterPxToRem(113);
+        position: absolute;
+        right: CounterPxToRem(87);
+        bottom: CounterPxToRem(27);
+
+        &_dots {
+            top: 0;
+            bottom: auto;
+            right: auto;
+            left: CounterPxToRem(70);
+            width: CounterPxToRem(45);
+        }
+    }
+}

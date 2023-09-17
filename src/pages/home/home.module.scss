@@ -1,0 +1,590 @@
+@import "./../../styles/var.scss";
+
+%aboutDots {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url("./../../images/dots/small-dots.svg"), no-repeat;
+    background-size: cover;
+}
+
+.header {
+    padding-top: CounterPxToRem(62);
+
+    &__button {
+        display: none;
+
+        @include Breakpoint("md") {
+            display: inline-block;
+        }
+    }
+
+    &__row {
+        text-align: center;
+
+        @include Breakpoint("md") {
+            display: flex;
+            column-gap: CounterPxToRem(18);
+            text-align: left;
+        }
+    }
+
+    &__content {
+
+
+        @include Breakpoint("md") {
+            padding-top: CounterPxToRem(74);
+            max-width: CounterPxToRem(576);
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: CounterPxToRem(32);
+
+        span {
+            color: $background-pink;
+        }
+    }
+
+    &__text {
+        margin-bottom: CounterPxToRem(24);
+
+        @include Breakpoint("md") {
+            max-width: CounterPxToRem(463);
+            width: 100%;
+        }
+    }
+
+    &__image {
+        height: CounterPxToRem(386);
+        overflow: hidden;
+
+        img,
+        picture {
+            height: 100%;
+        }
+    }
+
+    &__imageholder {
+        max-width: CounterPxToRem(470);
+        padding-left: CounterPxToRem(12);
+        position: relative;
+        margin: 0 auto;
+
+        @include Breakpoint("md") {
+            margin: 0;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-size: cover;
+        }
+
+        &::before {
+            width: CounterPxToRem(155);
+            height: CounterPxToRem(155);
+            top: CounterPxToRem(84);
+            left: 0;
+            background-image: url("./../../images/logo/logo-outline.svg");
+            z-index: -1;
+        }
+
+        &::after {
+            width: CounterPxToRem(84);
+            height: CounterPxToRem(84);
+            bottom: CounterPxToRem(93);
+            right: CounterPxToRem(16);
+            background-image: url("./../../images/dots/small-dots.svg");
+        }
+
+        &_desc {
+
+            padding: CounterPxToRem(8);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            max-width: CounterPxToRem(402);
+            width: 100%;
+            border: 1px solid $color-gray;
+            background: $background-gray;
+            column-gap: CounterPxToRem(10);
+
+            &::before,
+            &::after {
+                content: "";
+            }
+
+            span {
+                width: CounterPxToRem(16);
+                height: CounterPxToRem(16);
+                border: CounterPxToRem(1) solid $background-pink;
+                background: $background-pink;
+            }
+
+            b {
+                font-weight: 600;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.quote {
+    padding-top: CounterPxToRem(112);
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    .Container {
+        background: #000;
+    }
+
+    &__row {
+        position: relative;
+
+        &::after {
+            @extend %linearblock;
+            width: CounterPxToRem(91);
+            height: CounterPxToRem(91);
+            top: 50%;
+            transform: translateY(-50%);
+            right: CounterPxToRem(-(87 + 91 - 9));
+        }
+    }
+
+    &__blockquote {
+        padding: CounterPxToRem(15);
+        position: relative;
+        border: CounterPxToRem(1) solid $color-gray;
+        background: $background-gray;
+
+        @include Breakpoint("md"){
+            padding: CounterPxToRem(32);
+        }
+
+        &::before,
+        &::after {
+            content: url("./../../images/icons/quote-icon.svg");
+            display: block;
+            width: CounterPxToRem(41);
+            height: CounterPxToRem(28);
+            position: absolute;
+            padding: CounterPxToRem(4) CounterPxToRem(8);
+            background: $background-gray;
+        }
+
+        &::before {
+            top: CounterPxToRem(-18);
+            left: CounterPxToRem(11);
+        }
+
+        &::after {
+            bottom: CounterPxToRem(-18);
+            right: CounterPxToRem(11);
+        }
+    }
+
+    &__wrap {
+        max-width: CounterPxToRem(712);
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: $color-white;
+    }
+
+    &__author {
+        padding: CounterPxToRem(16);
+        width: CounterPxToRem(170);
+        margin-left: auto;
+        color: $color-white;
+        font-size: CounterPxToRem(24);
+        font-weight: 400;
+        line-height: normal;
+        border: CounterPxToRem(1) solid $color-gray;
+    }
+}
+
+.projects {
+    padding-top: CounterPxToRem(74);
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &__link {
+        color: $color-white;
+        font-size: CounterPxToRem(16);
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+    }
+
+    &__row {
+        display: flex;
+        align-items: baseline;
+        padding-top: CounterPxToRem(48);
+        gap: CounterPxToRem(16);
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+
+        @include Breakpoint("lg") {
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        &>* {
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        &::after {
+            @extend %linearblock;
+            width: CounterPxToRem(155);
+            height: CounterPxToRem(155);
+            top: 50%;
+            transform: translateY(-50%);
+            right: CounterPxToRem(-(101 + 155));
+        }
+
+        &::before {
+            @extend %dots;
+            top: CounterPxToRem(23);
+            left: CounterPxToRem(-135);
+            width: CounterPxToRem(84);
+            height: CounterPxToRem(84);
+        }
+    }
+}
+
+.skills {
+    padding-top: CounterPxToRem(106);
+
+    &__hr {
+        max-width: CounterPxToRem(239) !important;
+    }
+
+    &__lists {
+        max-width: CounterPxToRem(592);
+        display: flex;
+        align-items: baseline;
+        list-style-type: none;
+        gap: CounterPxToRem(16);
+        padding-top: CounterPxToRem(43 - 12);
+        // flex-wrap: wrap;
+
+
+        @include Breakpoint("md") {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        @media(max-width: 685px) {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &>* {
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+    }
+
+    &__iconsholder {
+        max-width: CounterPxToRem(415);
+        width: 100%;
+        position: relative;
+        height: CounterPxToRem(400);
+
+        @include Breakpoint("md") {
+            height: auto;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+
+        &_dots {
+            width: CounterPxToRem(63);
+            height: CounterPxToRem(63);
+            top: CounterPxToRem(50 - 12);
+            left: CounterPxToRem(35);
+
+            &_other {
+                top: CounterPxToRem(143);
+                left: CounterPxToRem(209);
+            }
+        }
+
+        &_outline {
+            bottom: CounterPxToRem(115);
+            left: CounterPxToRem(47);
+            width: CounterPxToRem(113);
+            height: CounterPxToRem(113);
+
+            @include Breakpoint("sm"){
+                bottom: CounterPxToRem(34 - 5);
+            }
+        }
+
+        &_linearblock {
+            top: 0;
+            right: CounterPxToRem(16);
+
+            @include Breakpoint("sm"){
+                right: 0;
+            }
+
+            &_other {
+                top: auto;
+                bottom: 0 !important;
+                right: 0;
+
+                @include Breakpoint("md") {
+                    right: CounterPxToRem(-40);
+                }
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: CounterPxToRem(38);
+        padding-top: CounterPxToRem(12);
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+
+        @media(max-width: $breakpoint-md) {
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        @include Breakpoint("md") {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        width: CounterPxToRem(200);
+        border: CounterPxToRem(1) solid $color-gray;
+
+        @include Breakpoint("md") {
+            width: CounterPxToRem(182);
+        }
+
+        &>* {
+            padding: CounterPxToRem(8);
+        }
+
+        &_desc {
+            border-top: CounterPxToRem(1) solid $color-gray;
+            display: flex;
+            flex-wrap: wrap;
+            gap: CounterPxToRem(8);
+        }
+
+        &_wrap {
+
+            @media(max-width: $breakpoint-md) {
+                display: flex;
+                flex-wrap: wrap;
+                gap: CounterPxToRem(16);
+                flex-direction: row;
+            }
+
+            @media(max-width: $breakpoint-md) {
+                flex-direction: column;
+            }
+
+            &>*+* {
+
+
+                @include Breakpoint("md") {
+                    margin-top: CounterPxToRem(16);
+                }
+            }
+        }
+
+        &_big {
+            width: CounterPxToRem(200);
+        }
+    }
+}
+
+
+
+.about {
+    padding-top: CounterPxToRem(112);
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &__hr {
+        width: CounterPxToRem(326);
+    }
+
+    &__row {
+        padding-top: CounterPxToRem(60);
+        display: flex;
+        justify-content: space-between;
+        gap: CounterPxToRem(16);
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        @include Breakpoint("md") {
+            padding-top: CounterPxToRem(17);
+            flex-direction: row;
+        }
+
+        &::before {
+            @extend %linearblock;
+            width: CounterPxToRem(155);
+            height: CounterPxToRem(155);
+            top: 50%;
+            left: CounterPxToRem(-(93 + 155));
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            @extend %dots;
+            bottom: CounterPxToRem(101);
+            right: CounterPxToRem(-(91 + 84));
+            width: CounterPxToRem(84);
+            height: CounterPxToRem(84);
+        }
+
+    }
+
+    &__content {
+        max-width: CounterPxToRem(500);
+        width: 100%;
+        padding-top: CounterPxToRem(23 - 17);
+
+        @include Breakpoint("md") {
+            width: CounterPxToRem(515);
+        }
+
+        &>*+* {
+            margin-top: CounterPxToRem(36);
+        }
+    }
+
+    &__imageholder {
+        max-width: CounterPxToRem(343);
+        width: 100%;
+        margin-top: CounterPxToRem(-(32 + 12));
+        position: relative;
+
+        &::after {
+            @extend %aboutDots;
+
+            width: CounterPxToRem(104);
+            height: CounterPxToRem(56);
+            right: CounterPxToRem(16);
+            bottom: CounterPxToRem(172);
+        }
+
+        picture {
+            position: relative;
+
+            &::before {
+                @extend %aboutDots;
+            }
+
+            &::before {
+                width: CounterPxToRem(84);
+                height: CounterPxToRem(84);
+                left: 0;
+                top: CounterPxToRem(60);
+                z-index: -1;
+
+                @include Breakpoint("md"){
+                    z-index: 0;
+                }
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: CounterPxToRem(44);
+                right: CounterPxToRem(44);
+                border-bottom: CounterPxToRem(1) solid $background-pink;
+            }
+        }
+    }
+}
+
+.contacts {
+    padding-top: CounterPxToRem(113);
+    padding-bottom: CounterPxToRem(145);
+
+    @media(min-width: 1366px) {
+        overflow: hidden;
+    }
+
+    &__hr {
+        max-width: CounterPxToRem(127) !important;
+    }
+
+    &__row {
+        display: flex;
+        padding-top: CounterPxToRem(45);
+        justify-content: space-between;
+        position: relative;
+        flex-direction: column;
+        gap: CounterPxToRem(16);
+
+        @include Breakpoint("md"){
+            flex-direction: row;
+        }
+
+        &::before {
+            @extend %dots;
+            top: 50%;
+            transform: translateY(-50%);
+            left: CounterPxToRem(-(118 + 103));
+            width: CounterPxToRem(103);
+            height: CounterPxToRem(103);
+        }
+    }
+
+    &__description {
+        text-align: justify;
+
+        @include Breakpoint("md"){
+            text-align: left;
+            max-width: CounterPxToRem(505);
+        }
+    }
+
+    &__socials {
+        
+        padding: CounterPxToRem(16);
+        border: CounterPxToRem(1) solid $color-gray;
+
+        &>*+* {
+            margin-top: CounterPxToRem(16);
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+
+        &>*+* {
+            margin-top: CounterPxToRem(8);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import "./../../styles/var.scss";
+
+.Container {
+    max-width: CounterPxToRem($conatiner-desktop);
+    width: 100%;
+    padding: 0 CounterPxToRem($conatiner-padding);
+    margin: 0 auto;
+}

@@ -1,0 +1,5 @@
+@import "./../../styles/var.scss";
+
+.LinearBlock{
+    border: CounterPxToRem(1) solid $color-gray;
+}

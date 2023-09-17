@@ -1,0 +1,7 @@
+@import "./../../../styles/var.scss";
+
+.Parallax {
+    &__item {
+        transition: all 0.2s linear;
+    }
+}

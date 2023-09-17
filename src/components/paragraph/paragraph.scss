@@ -1,0 +1,7 @@
+@import "./../../styles/var.scss";
+
+.Paragraph  {
+    color: $color-gray;
+    font-size: CounterPxToRem(16);
+    line-height: CounterPxToRem(25);
+}

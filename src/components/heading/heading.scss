@@ -1,0 +1,36 @@
+@import "./../../styles/var.scss";
+
+%font-weight {
+    font-weight: 500;
+}
+
+.Title {
+
+    &-xl {
+        font-size: 80px;
+        font-weight: 600;
+    }
+
+    &-1 {
+        font-size: 32px;
+        @extend %font-weight;
+    }
+
+    &-2 {
+        font-size: 24px;
+        @extend %font-weight;
+    }
+
+    &-3 {
+        font-size: 16px;
+        @extend %font-weight;
+    }
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-weight: inherit;
+        line-height: normal;
+        color: $color-white;
+    }
+}

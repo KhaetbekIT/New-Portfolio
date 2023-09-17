@@ -1,0 +1,59 @@
+@import "./../../styles/var.scss";
+
+.Card {
+    max-width: CounterPxToRem(331);
+    width: 100%;
+    border: CounterPxToRem(1) solid $color-gray;
+
+    &>*+* {
+        border-top: CounterPxToRem(1) solid $color-gray;
+    }
+
+    &__text {
+        padding: CounterPxToRem(8);
+        display: flex;
+        flex-wrap: wrap;
+        gap: CounterPxToRem(16) CounterPxToRem(8);
+    }
+
+    &__content {
+        padding: CounterPxToRem(16);
+
+        &>*+* {
+            margin-top: CounterPxToRem(16);
+        }
+    }
+
+    &__imageholder {
+        height: CounterPxToRem(201);
+        overflow: hidden;
+
+        picture,
+        img,
+        source {
+            height: 100%;
+        }
+    }
+
+    &__big {
+        .Card__button {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: CounterPxToRem(8);
+        }
+
+        .Card__imageholder {
+            picture {
+                transform: scale(1);
+                transition: all .3s linear;
+            }
+
+            &:hover {
+                picture {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
