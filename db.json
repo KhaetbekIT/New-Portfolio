@@ -1,0 +1,340 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "image": "/covers/foresttravel.png",
+            "imageWebp": "/covers/foresttravel.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "Pixel-Purfect",
+                "Figma"
+            ],
+            "title": "ForestTravel",
+            "description": "Multi-page site for tours",
+            "liveLink": "https://foresttravel.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/ForestTravel/",
+            "repositoryName": "ForestTravel",
+            "category": "small"
+        },
+        {
+            "id": 2,
+            "image": "/covers/junit.jpg",
+            "imageWebp": "/covers/junit.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "Pixel-Purfect",
+                "Sass",
+                "JavaScript",
+                "Figma"
+            ],
+            "title": "Unit",
+            "description": "Landing page for advertising pages",
+            "liveLink": "https://junit.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/Junit/",
+            "repositoryName": "Junit",
+            "category": "big"
+        },
+        {
+            "id": 3,
+            "image": "/covers/nvidea.png",
+            "imageWebp": "/covers/nvidea.webp",
+            "technologies": [
+                "Pug",
+                "Sass",
+                "Pixel-Purfect",
+                "Gulp (plugins)",
+                "Figma"
+            ],
+            "title": "Nvidia",
+            "description": "Test tasks from companies",
+            "liveLink": "https://nvidea.whpchust.ru/dist/",
+            "repository": "https://github.com/KhaetbekIT/Nvidia-Test",
+            "repositoryName": "Nvidea-Test",
+            "category": "small"
+        },
+        {
+            "id": 4,
+            "image": "/covers/dikom.png",
+            "imageWebp": "/covers/dikom.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "Pixel-Purfect",
+                "PHP",
+                "ReactJS",
+                "Figma"
+            ],
+            "title": "Dikom",
+            "description": "DiKom is a company where sons work side by side with their parents. (Teamwork)",
+            "liveLink": "https://www.dikom.ru/",
+            "repository": null,
+            "repositoryName": null,
+            "category": "big"
+        },
+        {
+            "id": 5,
+            "image": "/covers/dobro.png",
+            "imageWebp": "/covers/dobro.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "Pixel-Purfect",
+                "ReactJS",
+                "Figma"
+            ],
+            "title": "Dobro",
+            "description": "We make dobro furniture to make the working environment more comfortable, the home more comfortable, and people happier. (Teamwork)",
+            "liveLink": "https://dobro.io/",
+            "repository": null,
+            "repositoryName": null,
+            "category": "big"
+        },
+        {
+            "id": 6,
+            "image": "/covers/cinema.png",
+            "imageWebp": "/covers/cinema.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "Figma",
+                "JavaScript"
+            ],
+            "title": "Vilm (Cinema)",
+            "description": "Vilm - movie site to watch your favorite movies.",
+            "liveLink": "https://cinema.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Cinema/",
+            "repositoryName": "Cinema",
+            "category": "small"
+        },
+        {
+            "id": 7,
+            "image": "/covers/delta.png",
+            "imageWebp": "/covers/delta.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "Pixel-Purfect",
+                "Figma",
+                "PHP"
+            ],
+            "title": "ENERGON",
+            "description": "ENERGON is a developer and supplier of energy storage and generation solutions. (Teamwork)",
+            "liveLink": "https://delta-solar.ru/product/solnechnye-moduli/delta-nxt/delta-nxt-200-39-m12-hc/",
+            "repository": null,
+            "repositoryName": null,
+            "category": "big"
+        },
+        {
+            "id": 8,
+            "image": "/covers/wikiage.png",
+            "imageWebp": "/covers/wikiage.webp",
+            "technologies": [
+                "JavaScript (Markdown.js)",
+                "HTML",
+                "CSS"
+            ],
+            "title": "WikiPages",
+            "description": "WikiPages is a cloned version of Wikipedia that uses markdown",
+            "liveLink": "https://wikipage.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Wikipage/",
+            "repositoryName": "WikiPages",
+            "category": "small"
+        },
+        {
+            "id": 9,
+            "image": "/covers/keyboard.png",
+            "imageWebp": "/covers/keyboard.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "title": "Keyboard Trainer",
+            "description": "Keyboard Trainer who types slowly",
+            "liveLink": "https://keyboard.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Keyboard/",
+            "repositoryName": "Keyboard",
+            "category": "small"
+        },
+        {
+            "id": 10,
+            "image": "/covers/mi-shop.png",
+            "imageWebp": "/covers/mi-shop.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Webpack.JS",
+                "Json-Server",
+                "Bootstrap"
+            ],
+            "title": "mi-shop.com",
+            "description": "Mi-shop is an online store for mi-brand products. With admin panel.",
+            "liveLink": "https://mi-shop.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Mi-Shop/",
+            "repositoryName": "mi-shop",
+            "category": "big"
+        },
+        {
+            "id": 11,
+            "image": "/covers/yandex-map.png",
+            "imageWebp": "/covers/yandex-map.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Yandex-API",
+                "Figma"
+            ],
+            "title": "Yandex API",
+            "description": "Find a geolocation using the Yandex API",
+            "liveLink": "https://yandex-map.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/Yandex-map/",
+            "repositoryName": "Yandex-map",
+            "category": "small"
+        },
+        {
+            "id": 12,
+            "image": "/covers/agroscout.jpg",
+            "imageWebp": "/covers/agroscout.webp",
+            "technologies": [
+                "ReactJS (Hooks)",
+                "Sass",
+                "JavaScript",
+                "Figma",
+                "Pixel-Purfect"
+            ],
+            "title": "AgroScout",
+            "description": "AgroScout - unmanned technologies for agriculture and industry.",
+            "liveLink": "https://agroscout.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/AgroScout/",
+            "repositoryName": "AgroScout",
+            "category": "big"
+        },
+        {
+            "id": 13,
+            "image": "/covers/burger.png",
+            "imageWebp": "/covers/burger.webp",
+            "technologies": [
+                "Angular",
+                "CSS",
+                "TypeScript",
+                "Figma"
+            ],
+            "title": "Burgers",
+            "description": "Site for ordering burgers that was created with the help of Angular and TopeScript.",
+            "liveLink": "https://burgers-chedder.netlify.app/",
+            "repository": "https://github.com/KhaetbekIT/Burgers",
+            "repositoryName": "Burgers",
+            "category": "small"
+        },
+        {
+            "id": 14,
+            "image": "/covers/filmateka.png",
+            "imageWebp": "/covers/filmateka.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "Bootstrap v4.1",
+                "JavaScript"
+            ],
+            "title": "Filmateka",
+            "description": "Film library - list of adding a movie to the site.",
+            "liveLink": "https://filmateka.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Filmateka",
+            "repositoryName": "Filmateka",
+            "category": "small"
+        },
+        {
+            "id": 15,
+            "image": "/covers/hipsum.png",
+            "imageWebp": "/covers/hipsum.webp",
+            "technologies": [
+                "Pug",
+                "Sass",
+                "JavaScript",
+                "Gulp (plugins)",
+                "Node_modules"
+            ],
+            "title": "Hipsum",
+            "description": "Hipsum blog post for news.",
+            "liveLink": "https://hipsum-blog.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/Hipsum-Blog/",
+            "repositoryName": "Hipsum Blog",
+            "category": "small"
+        },
+        {
+            "id": 16,
+            "image": "/covers/portfolio-1.png",
+            "imageWebp": "/covers/portfolio-1.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "JavaScript (AOS.js)",
+                "Pixel-Purfect"
+            ],
+            "title": "Portfolio",
+            "description": "First portfolio.",
+            "liveLink": "https://portfolio.whpchust.ru",
+            "repository": "https://github.com/KhaetbekIT/Portfolio",
+            "repositoryName": "Portfolio",
+            "category": "small"
+        },
+        {
+            "id": 17,
+            "image": "/covers/solaris.png",
+            "imageWebp": "/covers/solaris.webp",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript (JQuery.js)"
+            ],
+            "title": "Solaris",
+            "description": "Online calculator for calculating money at a given dollar rate using JQuery.js",
+            "liveLink": "https://solaris.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/Solaris/",
+            "repositoryName": "Solaris",
+            "category": "small"
+        },
+        {
+            "id": 18,
+            "image": "/covers/anime.png",
+            "imageWebp": "/covers/anime.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "JavaScript",
+                "API (Render)",
+                "CSS",
+                "Webpack.JS"
+            ],
+            "title": "Anime",
+            "description": "Who loves anime?",
+            "liveLink": "https://anime.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/Anime/",
+            "repositoryName": "Anime",
+            "category": "big"
+        },
+        {
+            "id": 19,
+            "image": "/covers/ozon.png",
+            "imageWebp": "/covers/ozon.webp",
+            "technologies": [
+                "HTML",
+                "Sass",
+                "JavaScript",
+                "API (Render)",
+                "CSS",
+                "Webpack.JS"
+            ],
+            "title": "Ozon",
+            "description": "Online store Ozon",
+            "liveLink": "https://ozon.whpchust.ru/",
+            "repository": "https://github.com/KhaetbekIT/ozon/",
+            "repositoryName": "OZON",
+            "category": "small"
+        }
+    ]
+}
