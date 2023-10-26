@@ -5,4 +5,5 @@ export interface ITitle {
     heading: string;
     className?: string;
     ref?: React.LegacyRef<HTMLParagraphElement> | undefined;
+    hidden?: boolean;
 }
