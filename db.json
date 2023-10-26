@@ -129,7 +129,7 @@
         {
             "id": 8,
             "image": "/covers/wikiage.png",
-            "imageWebp": "/covers/wikiage.webp",
+            "imageWebp": "/covers/wikipage.webp",
             "technologies": [
                 "JavaScript (Markdown.js)",
                 "HTML",
@@ -273,7 +273,7 @@
                 "HTML",
                 "Sass",
                 "JavaScript (AOS.js)",
-                "Pixel-Purfect"
+                "Pixel-Perfect"
             ],
             "title": "Portfolio",
             "description": "First portfolio.",
