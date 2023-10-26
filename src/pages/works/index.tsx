@@ -3,44 +3,56 @@ import Style from "./works.module.scss"
 import Title from '../../components/heading'
 import Container from '../../components/container'
 import Card from '../../components/card'
-import { Projects } from '../../projects'
+import StyleProducts from "../home/home.module.scss";
 import Button from '../../components/buttons'
+import {IProjects} from "../../assets/interface/projects";
+import ky from "ky";
 
 const Works: React.FC = () => {
     const [Works, setWorks]: Array<any> = useState<object>([])
     const [SmallWorks, setSmallWorks]: Array<any> = useState<object>([])
     const [isSee, setIsSee] = useState<boolean>(false)
-    let SliceCounter: number = 5
+    let SliceCounter: number = 5;
+    // const [Projects, setProjects]:Array<any> = useState([]);
+    const [IsLoading, setIsLoading] = useState<boolean>(false);
+     const GetProjectsFunc = async ():Promise<void>=>{
+            try {
+                const data:Array<IProjects> = await ky.get(`https://portfolio-server-api-jbt5.onrender.com/projects/`).json()
+                setWorks(data);
+                setIsLoading(true);
+            }catch (error){console.error(error); setIsLoading(false);}
+        }
 
     const HandleProjects = (e: MouseEvent) => {
         SliceCounter = (Works.length + 5)
 
         if (SliceCounter === 11) {
-            setWorks(Projects.slice(0, 11))
+            setWorks(Works.slice(0, 11))
         }
         else if (SliceCounter === 16) {
-            setWorks(Projects.slice(0, 16))
+            setWorks(Works.slice(0, 16))
         }
 
-        else if (SliceCounter !== Projects.length) {
-            setWorks(Projects.slice(0, Projects.length))
+        else if (SliceCounter !== Works.length) {
+            setWorks(Works.slice(0, Works.length))
             setIsSee(true)
             const target = e.target as Element
 
             if(target.lastChild?.textContent === "Less"){
-                setWorks(Projects.slice(0, 6))
+                setWorks(Works.slice(0, 6))
                 setIsSee(false)
             }
         }
     }
 
     useEffect(() => {
-        setIsSee(false)
-        setWorks(Projects.slice(0, 6))
+        GetProjectsFunc()
+        setIsSee(false);
+        setWorks(Works.slice(0, 6));
         setSmallWorks(() => {
-            return Projects.filter(project => project.category === "small")
-        })
-    }, [])
+            return Works.filter((project: any) => project.category === "small")
+        });
+    }, []);
 
     return (
         <main className={`inner-page Works`}>
@@ -64,6 +76,9 @@ const Works: React.FC = () => {
                         <span className="primary-pink">#</span>
                         <span>complete-apps</span>
                     </Title>
+
+                    <Title heading={"h2"} className={`title-2 ${StyleProducts.projects__progress}`} hidden={IsLoading}>Downloading...</Title>
+
                     <div className={Style.complete__row}>
                         {
                             Works.map((work: any) => {
@@ -103,6 +118,9 @@ const Works: React.FC = () => {
                         <span className="primary-pink">#</span>
                         <span>small-projects</span>
                     </Title>
+
+                    <Title heading={"h2"} className={`title-2 ${StyleProducts.projects__progress}`} hidden={IsLoading}>Downloading...</Title>
+
                     <div className={Style.small_projects__row}>
 
                         {

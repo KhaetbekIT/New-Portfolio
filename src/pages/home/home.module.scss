@@ -217,6 +217,11 @@
         overflow: hidden;
     }
 
+    &__progress{
+        padding: CounterPxToRem(48) 0;
+        text-align:center;
+    }
+
     &__link {
         color: $color-white;
         font-size: CounterPxToRem(16);

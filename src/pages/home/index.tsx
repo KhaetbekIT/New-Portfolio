@@ -20,20 +20,33 @@ import Dots from '../../components/dots'
 import LogoOutline from "./../../images/logo/logo-outline.svg"
 import LogoOutline2 from "./../../images/logo/webp/logo-outline.webp"
 import LinearBlock from '../../components/linear-block'
-import { Projects } from '../../projects'
+// import { Projects } from '../../projects'
 import { TypeAnimation } from 'react-type-animation'
+import {IProjects} from "../../assets/interface/projects";
+import ky from "ky";
 
 const Home: React.FC = () => {
 
-    const [LastProjects, setLastProjects]: Array<any> = useState<object>([])
+    const [Projects, setProjects]:Array<any> = useState([]);
+    const [LastProjects, setLastProjects]:Array<any> = useState<object>([]);
+    const [IsLoading, setIsLoading] = useState<boolean>(false)
+
+    const GetProjectsFunc = async ():Promise<void>=>{
+        try {
+            const data:Array<IProjects> = await ky.get(`https://portfolio-server-api-jbt5.onrender.com/projects/`).json()
+            setProjects(data);
+            setIsLoading(true);
+        }catch (error){console.error(error); setIsLoading(false);}
+    }
 
     useEffect(() => {
+        const projects = GetProjectsFunc();
         setLastProjects(() => {
-            const filterProject = Projects.filter(project => project.category === "big")
+            const filterProject = Projects.filter((project: any) => project.category === "big")
 
-            return filterProject.sort((a, b) => b.id - a.id).slice(0, 3)
+            return filterProject.sort((a: any, b: any) => b.id - a.id).slice(0, 3)
         })
-    }, [])
+    }, [Projects.length]);
 
     return (
         <React.Fragment>
@@ -136,6 +149,8 @@ const Home: React.FC = () => {
                                 View all ~~{'>'}
                             </Link>
                         </div>
+
+                        <Title heading={"h2"} className={`title-2 ${Style.projects__progress}`} hidden={IsLoading}>Downloading...</Title>
 
                         <div className={Style.projects__row}>
                             {
