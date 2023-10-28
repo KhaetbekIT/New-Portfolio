@@ -27,7 +27,7 @@ const Navigation: React.FC = () => {
                         <div className={Style.Nav__socials}>
                             <div className={Style.Nav__vertical_line}></div>
                             <Media icon={'github'} to={`https://github.com/KhaetbekIT`} />
-                            <Media icon={'whats-app'} to={`https://wa.me/998938492019`} />
+                            {/*<Media icon={'whats-app'} to={`https://wa.me/`} />*/}
                             <Media icon={'facebook'} to={`https://www.facebook.com/hayotbek.ahmadjonov.75`} />
                         </div>
                         <Logo className={Style.Nav__logo}>
@@ -46,8 +46,7 @@ const Navigation: React.FC = () => {
                                                 <span>#</span>{params.page_name}
                                             </NavLink>
                                         </React.Fragment>
-                                    ) : undefined
-
+                                    ) : undefined;
                                 })
                             }
                         </nav>

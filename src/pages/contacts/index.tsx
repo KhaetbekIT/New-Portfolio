@@ -76,9 +76,9 @@ const Contacts: React.FC = () => {
                         <Media icon={'email'} to={`mailto:khaetbek@internet.ru`} />
                         <Media icon={'github'} to={`https://github.com/KhaetbekIT`} />
                         <Media icon={'facebook'} to={`https://www.facebook.com/hayotbek.ahmadjonov.75`} />
-                        <Media icon={'telegram'} to={`https://t.me/Khaetbek`} />
+                        <Media icon={'telegram'} to={`https://t.me/+998500796477`} />
                         <Media icon={'instagram'} to={`https://instagram.com/khaetbekit`} />
-                        <Media icon={'whats-app'} to={`https://wa.me/998938492019`} />
+                        <Media icon={'whats-app'} to={`https://wa.me/`} />
                         <Media icon={'ok-ru'} to={`https://ok.ru/profile/598475954227`} />
                         <Media icon={'landmark'} to={`https://goo.gl/maps/NARSSGHg82YcGyWP6`} />
                         <Media icon={'twitter'} to={`https://twitter.com/khaetbekIT`} />

@@ -9,50 +9,47 @@ import {IProjects} from "../../assets/interface/projects";
 import ky from "ky";
 
 const Works: React.FC = () => {
+    const [Projects, setProjects] = useState<IProjects[]>([])
     const [Works, setWorks]: Array<any> = useState<object>([])
     const [SmallWorks, setSmallWorks]: Array<any> = useState<object>([])
     const [isSee, setIsSee] = useState<boolean>(false)
     let SliceCounter: number = 5;
-    // const [Projects, setProjects]:Array<any> = useState([]);
     const [IsLoading, setIsLoading] = useState<boolean>(false);
-     const GetProjectsFunc = async ():Promise<void>=>{
+     async function GetProjectsFunc():Promise<void>{
             try {
                 const data:Array<IProjects> = await ky.get(`https://portfolio-server-api-jbt5.onrender.com/projects/`).json()
-                setWorks(data);
+                setProjects(data);
                 setIsLoading(true);
             }catch (error){console.error(error); setIsLoading(false);}
+     }
+      const HandleProjects = (e: MouseEvent):void => {
+        SliceCounter = Works.length + 6;
+
+        if (SliceCounter === 12) {
+            setWorks(Projects.slice(0, 12));
+        }
+        else if (SliceCounter === 18) {
+            setWorks(Projects.slice(0, 18));
         }
 
-    const HandleProjects = (e: MouseEvent) => {
-        SliceCounter = (Works.length + 5)
-
-        if (SliceCounter === 11) {
-            setWorks(Works.slice(0, 11))
-        }
-        else if (SliceCounter === 16) {
-            setWorks(Works.slice(0, 16))
-        }
-
-        else if (SliceCounter !== Works.length) {
-            setWorks(Works.slice(0, Works.length))
+        else if (SliceCounter !== Works?.length) {
+            setWorks(Projects?.slice(0, Works?.length));
             setIsSee(true)
             const target = e.target as Element
 
             if(target.lastChild?.textContent === "Less"){
-                setWorks(Works.slice(0, 6))
+                setWorks(Works?.slice(0, 6))
                 setIsSee(false)
             }
         }
-    }
+      }
 
     useEffect(() => {
-        GetProjectsFunc()
+        GetProjectsFunc();
         setIsSee(false);
-        setWorks(Works.slice(0, 6));
-        setSmallWorks(() => {
-            return Works.filter((project: any) => project.category === "small")
-        });
-    }, []);
+        setWorks(Projects.slice(0,6));
+        setSmallWorks(() => Projects?.filter((project: any):boolean => project.category === "small"));
+    }, [Projects?.length]);
 
     return (
         <main className={`inner-page Works`}>
@@ -81,7 +78,7 @@ const Works: React.FC = () => {
 
                     <div className={Style.complete__row}>
                         {
-                            Works.map((work: any) => {
+                            Works?.map((work: any) => {
                                 return (
                                     <React.Fragment key={work.id}>
                                         <Card
@@ -124,7 +121,7 @@ const Works: React.FC = () => {
                     <div className={Style.small_projects__row}>
 
                         {
-                            SmallWorks.map((work: any) => {
+                            SmallWorks?.map((work: any) => {
                                 return (
                                     <React.Fragment key={work.id}>
                                         <Card
