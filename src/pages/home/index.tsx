@@ -20,7 +20,6 @@ import Dots from '../../components/dots'
 import LogoOutline from "./../../images/logo/logo-outline.svg"
 import LogoOutline2 from "./../../images/logo/webp/logo-outline.webp"
 import LinearBlock from '../../components/linear-block'
-// import { Projects } from '../../projects'
 import { TypeAnimation } from 'react-type-animation'
 import {IProjects} from "../../assets/interface/projects";
 import ky from "ky";
@@ -28,25 +27,21 @@ import ky from "ky";
 const Home: React.FC = () => {
 
     const [Projects, setProjects]:Array<any> = useState([]);
-    const [LastProjects, setLastProjects]:Array<any> = useState<object>([]);
     const [IsLoading, setIsLoading] = useState<boolean>(false)
 
     const GetProjectsFunc = async ():Promise<void>=>{
         try {
-            const data:Array<IProjects> = await ky.get(`https://portfolio-server-api-jbt5.onrender.com/projects/`).json()
-            setProjects(data);
+            const data:Array<IProjects> = await ky.get(`https://portfolio-server-api-jbt5.onrender.com/projects/`).json();
+            setProjects(
+                data?.filter((project: any):boolean => project.category === "big")?.sort((a: any, b: any) => b.id - a.id).slice(0, 3)
+            );
             setIsLoading(true);
         }catch (error){console.error(error); setIsLoading(false);}
     }
 
     useEffect(() => {
-        const projects = GetProjectsFunc();
-        setLastProjects(() => {
-            const filterProject = Projects.filter((project: any) => project.category === "big")
-
-            return filterProject.sort((a: any, b: any) => b.id - a.id).slice(0, 3)
-        })
-    }, [Projects.length]);
+        GetProjectsFunc();
+    }, []);
 
     return (
         <React.Fragment>
@@ -67,7 +62,7 @@ const Home: React.FC = () => {
                                                     100,
                                                     "\n HTML - layout designer",
                                                     10000,
-                                                    "\n ReactJS - developer",
+                                                    "\n JavaScript + React - developer",
                                                     10000,
                                                 ]}
                                                 speed={1}
@@ -79,7 +74,7 @@ const Home: React.FC = () => {
                                                     100,
                                                     "\n Frontend - developer",
                                                     10000,
-                                                    "\n TypeSript + React - developer",
+                                                    "\n TypeScript + React - developer",
                                                     10000,
                                                 ]}
                                                 speed={1}
@@ -154,7 +149,7 @@ const Home: React.FC = () => {
 
                         <div className={Style.projects__row}>
                             {
-                                LastProjects.map((project: any) => {
+                                Projects?.map((project: any) => {
                                     return (
                                         <React.Fragment key={project.id}>
                                             <Card
@@ -172,8 +167,6 @@ const Home: React.FC = () => {
                                     )
                                 })
                             }
-
-
                         </div>
                     </Container>
                 </section>
@@ -431,7 +424,7 @@ const Home: React.FC = () => {
                                 </Title>
                                 <ul className={Style.contacts__list}>
                                     <li>
-                                        <Media icon={`telegram`} text={`Khaetbek`} to={"https://t.me/Khaetbek"} />
+                                        <Media icon={`telegram`} text={`Khaetbek`} to={"https://t.me/+998500796477"} />
                                     </li>
                                     <li>
                                         <Media icon={`email`} text={`Khaetbek@internet.ru`} to={`mailto:khaetbek@internet.ru`} />
