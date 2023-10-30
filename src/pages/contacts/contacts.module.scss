@@ -1,95 +1,104 @@
 @import "./../../styles/var.scss";
 
 .Contacts {
-    padding-bottom: CounterPxToRem(84);
+  padding-bottom: CounterPxToRem(84);
 }
 
 .contacts {
-    padding-top: CounterPxToRem(46);
+  padding-top: CounterPxToRem(46);
 
-    @media(min-width: 1366px) {
-        overflow: hidden;
+  @media (min-width: 1366px) {
+    overflow: hidden;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: CounterPxToRem(11);
+    position: relative;
+    flex-direction: column;
+
+    @include Breakpoint("md") {
+      flex-direction: row;
     }
 
-    &__row {
-        display: flex;
-        justify-content: space-between;
-        gap: CounterPxToRem(11);
-        position: relative;
-        flex-direction: column;
+    &::after {
+      @extend %linearblock;
+      bottom: CounterPxToRem(-33);
+      right: CounterPxToRem(-(118 + 155));
+      width: CounterPxToRem(155);
+      height: CounterPxToRem(155);
+    }
+  }
 
-        @include Breakpoint("md") {
-            flex-direction: row;
-        }
+  &__description {
+    width: 100%;
 
-        &::after {
-            @extend %linearblock;
-            bottom: CounterPxToRem(-33);
-            right: CounterPxToRem(-(118 + 155));
-            width: CounterPxToRem(155);
-            height: CounterPxToRem(155);
-        }
+    @include Breakpoint("md") {
+      max-width: CounterPxToRem(505);
+    }
+  }
+
+  &__extra {
+    @extend .contacts__row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    row-gap: 0;
+
+    @include Breakpoint("md") {
+      max-width: CounterPxToRem(440);
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    padding: CounterPxToRem(16);
+    border: CounterPxToRem(1) solid $color-gray;
+    width: 100%;
+
+    @include Breakpoint("sm") {
+      width: auto;
     }
 
-    &__description {
-        width: 100%;
-
-        @include Breakpoint("md") {
-            max-width: CounterPxToRem(505);
-        }
+    & > * + * {
+      margin-top: CounterPxToRem(8);
     }
+  }
 
-    &__extra {
-        @extend .contacts__row;
-        align-items: baseline;
-        flex-wrap: wrap;
-        row-gap: 0;
-
-        @include Breakpoint("md") {
-            max-width: CounterPxToRem(440);
-            justify-content: flex-end;
-        }
-    }
-
-    &__item {
-        display: inline-block;
-        padding: CounterPxToRem(16);
-        border: CounterPxToRem(1) solid $color-gray;
-        width: 100%;
-
-        @include Breakpoint("sm") {
-            width: auto;
-        }
-
-        &>*+* {
-            margin-top: CounterPxToRem(8);
-        }
-    }
-
-    &__media {
-        padding-top: CounterPxToRem(25);
-    }
+  &__media {
+    padding-top: CounterPxToRem(25);
+  }
 }
 
 .media {
+  @media (min-width: 1366px) {
+    overflow: hidden;
+  }
 
-    @media(min-width: 1366px) {
-        overflow: hidden;
+  &__row {
+    display: flex;
+    gap: CounterPxToRem(22);
+    padding-top: CounterPxToRem(21);
+    position: relative;
+    flex-wrap: wrap;
+
+    &::before {
+      @extend %dots;
+      top: 0;
+      left: CounterPxToRem(-(93 + 109));
+      width: CounterPxToRem(109);
+      height: CounterPxToRem(60);
     }
+  }
+}
 
-    &__row {
-        display: flex;
-        gap: CounterPxToRem(22);
-        padding-top: CounterPxToRem(21);
-        position: relative;
-        flex-wrap: wrap;
-
-        &::before {
-            @extend %dots;
-            top: 0;
-            left: CounterPxToRem(-(93 + 109));
-            width: CounterPxToRem(109);
-            height: CounterPxToRem(60);
-        }
-    }
+.github__calendar {
+  padding-top: clamp(
+    CounterPxToRem(16),
+    CounterPxToRem(20),
+    CounterPxToRem(25)
+  );
+  padding-left: CounterPxToRem(15);
 }
