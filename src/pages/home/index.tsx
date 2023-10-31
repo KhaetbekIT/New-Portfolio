@@ -21,8 +21,7 @@ import LogoOutline from "./../../images/logo/logo-outline.svg";
 import LogoOutline2 from "./../../images/logo/webp/logo-outline.webp";
 import LinearBlock from "../../components/linear-block";
 import { TypeAnimation } from "react-type-animation";
-import { IProjects } from "../../assets/interface/projects";
-import ky from "ky";
+import axios from "axios";
 
 const Home: React.FC = () => {
   const [Projects, setProjects]: Array<any> = useState([]);
@@ -30,16 +29,18 @@ const Home: React.FC = () => {
 
   const GetProjectsFunc = async (): Promise<void> => {
     try {
-      const data: Array<IProjects> = await ky
+      axios
         .get(`https://portfolio-server-api-jbt5.onrender.com/projects/`)
-        .json();
-      setProjects(
-        data
-          ?.filter((project: any): boolean => project.category === "big")
-          ?.sort((a: any, b: any) => b.id - a.id)
-          .slice(0, 3),
-      );
-      setIsLoading(true);
+        .then((response) => {
+          const data = response.data;
+          setProjects(() =>
+            [...data]
+              .sort((a: any, b: any) => b?.id - a?.id)
+              .filter((item: any) => item?.category === "big")
+              .slice(0, 3),
+          );
+          setIsLoading(true);
+        });
     } catch (error) {
       console.error(error);
       setIsLoading(false);

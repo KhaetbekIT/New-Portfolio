@@ -6,7 +6,7 @@ import Card from "../../components/card";
 import StyleProducts from "../home/home.module.scss";
 import Button from "../../components/buttons";
 import { IProjects } from "../../assets/interface/projects";
-import ky from "ky";
+import axios from "axios";
 
 const Works: React.FC = () => {
   const [Projects, setProjects] = useState<IProjects[]>([]);
@@ -15,18 +15,19 @@ const Works: React.FC = () => {
   const [isSee, setIsSee] = useState<boolean>(false);
   let SliceCounter: number = 5;
   const [IsLoading, setIsLoading] = useState<boolean>(false);
-  async function GetProjectsFunc(): Promise<void> {
+  const GetData = async (): Promise<void> => {
     try {
-      const data: Array<IProjects> = await ky
+      await axios
         .get(`https://portfolio-server-api-jbt5.onrender.com/projects/`)
-        .json();
-      setProjects(data);
-      setIsLoading(true);
+        .then((response): void => {
+          const data = response.data;
+          setProjects([...data]);
+          setIsLoading(true);
+        });
     } catch (error) {
       console.error(error);
-      setIsLoading(false);
     }
-  }
+  };
   const HandleProjects = (e: MouseEvent): void => {
     SliceCounter = Works.length + 6;
 
@@ -34,20 +35,21 @@ const Works: React.FC = () => {
       setWorks(Projects.slice(0, 12));
     } else if (SliceCounter === 18) {
       setWorks(Projects.slice(0, 18));
-    } else if (SliceCounter !== Works?.length) {
+    } else if (SliceCounter >= 19) {
       setWorks(Projects?.slice(0, Works?.length));
       setIsSee(true);
-      const target = e.target as Element;
-
+      const target: Element = e.target as Element;
       if (target.lastChild?.textContent === "Less") {
         setWorks(Works?.slice(0, 6));
         setIsSee(false);
       }
     }
+
+    console.log(SliceCounter, Works?.length);
   };
 
   useEffect(() => {
-    GetProjectsFunc();
+    GetData();
     setIsSee(false);
     setWorks(Projects.slice(0, 6));
     setSmallWorks(
@@ -56,7 +58,7 @@ const Works: React.FC = () => {
           (project: any): boolean => project.category === "small",
         ),
     );
-  }, [Projects?.length, Works?.length, SmallWorks?.length]);
+  }, [Projects.length]);
 
   return (
     <main className={`inner-page Works`}>
