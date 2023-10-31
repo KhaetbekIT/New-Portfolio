@@ -36,7 +36,7 @@ const Works: React.FC = () => {
     } else if (SliceCounter === 18) {
       setWorks(Projects.slice(0, 18));
     } else if (SliceCounter >= 19) {
-      setWorks(Projects?.slice(0, Works?.length));
+      setWorks(Projects);
       setIsSee(true);
       const target: Element = e.target as Element;
       if (target.lastChild?.textContent === "Less") {
