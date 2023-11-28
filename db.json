@@ -300,6 +300,23 @@
       "repository": "https://github.com/KhaetbekIT/New-Portfolio/",
       "repositoryName": "New Portfolio",
       "category": "big"
+    },
+    {
+      "id": 21,
+      "image": "/cover/wildberris.png",
+      "imageWebp": "/cover/wildberris.webp",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript (Webpack.js)",
+        "API (Render)"
+      ],
+      "title": "Wildberris",
+      "description": "Clone website Wildberris",
+      "liveLink": "https://wildberris.whpchust.ru/",
+      "repository": "https://github.com/KhaetbekIT/Wildberiris",
+      "repositoryName": "Wildberris",
+      "category": "small"
     }
   ]
 }

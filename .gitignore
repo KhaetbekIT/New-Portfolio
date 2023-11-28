@@ -22,3 +22,6 @@ yarn-error.log*
 
 # yml
 .cpanel.yml
+
+.idea
+.vscode
