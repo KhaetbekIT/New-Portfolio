@@ -303,8 +303,8 @@
     },
     {
       "id": 21,
-      "image": "/cover/wildberris.png",
-      "imageWebp": "/cover/wildberris.webp",
+      "image": "/covers/wildberris.png",
+      "imageWebp": "/covers/wildberris.webp",
       "technologies": [
         "HTML",
         "CSS",
