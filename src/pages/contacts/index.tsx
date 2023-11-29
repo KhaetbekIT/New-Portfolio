@@ -106,7 +106,6 @@ const Contacts: React.FC = () => {
             />
             <Media icon={"telegram"} to={`https://t.me/+998500796477`} />
             <Media icon={"instagram"} to={`https://instagram.com/khaetbekit`} />
-            <Media icon={"whats-app"} to={`https://wa.me/`} />
             <Media icon={"ok-ru"} to={`https://ok.ru/profile/598475954227`} />
             <Media
               icon={"landmark"}
