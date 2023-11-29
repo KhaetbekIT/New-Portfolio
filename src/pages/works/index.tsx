@@ -31,21 +31,17 @@ const Works: React.FC = () => {
   const HandleProjects = (e: MouseEvent): void => {
     SliceCounter = Works.length + 6;
 
-    if (SliceCounter === 12) {
-      setWorks(Projects.slice(0, 12));
-    } else if (SliceCounter === 18) {
-      setWorks(Projects.slice(0, 18));
-    } else if (SliceCounter >= 19) {
+    if (SliceCounter >= 19) {
       setWorks(Projects);
       setIsSee(true);
-      const target: Element = e.target as Element;
-      if (target.lastChild?.textContent === "Less") {
-        setWorks(Works?.slice(0, 6));
-        setIsSee(false);
-      }
     }
+    setWorks(Projects.slice(0, SliceCounter));
 
-    console.log(SliceCounter, Works?.length);
+    const target: Element = e.target as Element;
+    if (target.lastChild?.textContent === "Less") {
+      setWorks(Works?.slice(0, 6));
+      setIsSee(false);
+    }
   };
 
   useEffect(() => {
