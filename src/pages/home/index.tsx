@@ -316,7 +316,7 @@ const Home: React.FC = () => {
                         <span>Font Awesome</span>
                         <span>(GitHub & GitLab)</span>
                         <span>Gulp</span>
-                        <span>Pixel Purfect</span>
+                        <span>Pixel Perfect</span>
                       </Paragraph>
                     </div>
 
@@ -328,7 +328,7 @@ const Home: React.FC = () => {
                       </Title>
 
                       <Paragraph className={Style.skills__item_desc}>
-                        <span>React (JSX & TSX) </span>
+                        <span>React (JSX & TSX & Redux & ReduxToolkit) </span>
                         <span>Bootstrap 5.3</span>
                         <span>Material CSS</span>
                         <span>MUI</span>
